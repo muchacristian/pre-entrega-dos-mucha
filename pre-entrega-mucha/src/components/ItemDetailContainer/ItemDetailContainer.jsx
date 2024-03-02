@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ItemDetail } from "../../ItemDetail/ItemDetail";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { getProduct } from "../../asyncMocks";
 import { useParams } from "react-router-dom";
 

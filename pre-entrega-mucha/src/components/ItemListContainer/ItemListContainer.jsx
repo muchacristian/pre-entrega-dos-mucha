@@ -11,14 +11,14 @@ export const ItemListContainer = ({ greeting }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     getProducts().then((resp) => {
-      console.log(resp)
+      console.log(resp);
       if (category) {
         const productFilter = resp.filter(
           (product) => product.category == category
         );
-        console.log(productFilter)
+        console.log(productFilter);
         setProducts(productFilter);
       } else {
         setProducts(resp);
@@ -32,8 +32,8 @@ export const ItemListContainer = ({ greeting }) => {
       <h1 className={styles.title}>{greeting}</h1>
       {isLoading ? (
         <h2 className="text-center mt-5">Cargando Productos...</h2>
-      ) : (     
-          <ItemList products={products} />
+      ) : (
+        <ItemList products={products} />
       )}
     </>
   );
