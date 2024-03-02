@@ -1,0 +1,18 @@
+
+
+.navegacion {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+.logo {
+    width: 6rem;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+
+
