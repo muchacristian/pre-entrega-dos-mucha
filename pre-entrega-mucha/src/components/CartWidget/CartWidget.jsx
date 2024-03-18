@@ -9,6 +9,6 @@ export const CartWidget = () => {
     <div>
       <img className={styles.carrito} src={carrito} alt="Carrito de compras" />
       <strong> {totalItems} </strong>
-    </div> 
+    </div>
   );
 };

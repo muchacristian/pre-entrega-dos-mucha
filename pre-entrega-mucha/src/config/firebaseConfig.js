@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore'
-
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBQJHH3zvfEIMa6nEerwGLXVxQA6ZX-bj0",
@@ -8,9 +7,10 @@ const firebaseConfig = {
   projectId: "cris-react",
   storageBucket: "cris-react.appspot.com",
   messagingSenderId: "334662840370",
-  appId: "1:334662840370:web:f5ecf8869a72e2dbf58c2b"
+  appId: "1:334662840370:web:f5ecf8869a72e2dbf58c2b",
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);

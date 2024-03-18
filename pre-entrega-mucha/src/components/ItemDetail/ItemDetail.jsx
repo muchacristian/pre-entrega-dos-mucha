@@ -1,26 +1,20 @@
 import { useContext } from "react";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContext";
-import { Item } from "../Item/Item";
 
 export const ItemDetail = ({ id, name, description, img, price, stock }) => {
-
   const { addItem } = useContext(CartContext);
 
-  const onAdd = ( quantity ) => {
-
+  const onAdd = (quantity) => {
     const item = {
       id,
       name,
       price,
-      img
-    }
+      img,
+    };
 
-    addItem(item, quantity)
-
-  }
-  
-
+    addItem(item, quantity);
+  };
 
   return (
     <div className="d-flex justify-content-center mb-5">

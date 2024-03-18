@@ -6,11 +6,10 @@ import { Cart } from "./components/Cart/Cart";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartContextProvider } from "./context/CartContext";
 
-
 const App = () => {
   return (
     <>
-    <CartContextProvider>
+      <CartContextProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -27,7 +26,7 @@ const App = () => {
             <Route path="/item/:id" element={<ItemDetailContainer />} />
           </Routes>
         </BrowserRouter>
-    </CartContextProvider>
+      </CartContextProvider>
     </>
   );
 };

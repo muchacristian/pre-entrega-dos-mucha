@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import styles from "./ItemListContainer.module.css";
-import { getProducts } from "../../asyncMocks";
 import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../config/firebaseConfig";
+import { seedProducts } from "../../utils/seedProducts";
 
 export const ItemListContainer = ({ greeting }) => {
   const { category } = useParams();
@@ -10,21 +12,32 @@ export const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    setIsLoading(true);
-    getProducts().then((resp) => {
-      console.log(resp);
-      if (category) {
-        const productFilter = resp.filter(
-          (product) => product.category == category
-        );
-        console.log(productFilter);
-        setProducts(productFilter);
-      } else {
-        setProducts(resp);
-      }
+  const getProductsDB = (category) => {
+    // Coleccion de nuestra base de datos
+    const myProducts = category
+      ? query(collection(db, "products"), where("category", "==", category))
+      : collection(db, "products");
+
+    //Ordenamos los productos recibidos de nuestra base de datos en un nuevo array para guardar en el state
+    getDocs(myProducts).then((response) => {
+      const productList = response.docs.map((doc) => {
+        const item = {
+          id: doc.id,
+          ...doc.data(),
+        };
+
+        return item;
+      });
+      //Guardamos los productos ya ordenados en el state
+      setProducts(productList);
       setIsLoading(false);
     });
+  };
+
+  useEffect(() => {
+    setIsLoading(true);
+    getProductsDB(category);
+    // seedProducts();
   }, [category]);
 
   return (

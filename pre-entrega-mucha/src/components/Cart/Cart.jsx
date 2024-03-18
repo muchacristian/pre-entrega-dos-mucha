@@ -8,10 +8,7 @@ export const Cart = () => {
     <>
       <div className="container my-4">
         {cart.map((item) => (
-          <div
-            key={item.id}
-            className="d-flex flex-column p-3 card w-25 m-5"
-          >
+          <div key={item.id} className="d-flex flex-column p-3 card w-25 m-5">
             <img src={item.img} alt="" />
             <p key={item.id}>Nombre: {item.name} </p>
             <p>Cantidad: {item.quantity} </p>
