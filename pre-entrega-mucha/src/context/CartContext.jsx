@@ -6,7 +6,7 @@ export const CartContext = createContext(null);
 //Aca creamos el Provider
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [totalprice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
 
   const addItem = (item, quantity) => {
@@ -65,7 +65,7 @@ export const CartContextProvider = ({ children }) => {
   const objectValues = {
     cart,
     totalItems,
-    totalprice,
+    totalPrice,
     addItem,
     removeItem,
     clearCart,

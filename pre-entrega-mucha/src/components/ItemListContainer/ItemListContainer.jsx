@@ -37,6 +37,7 @@ export const ItemListContainer = ({ greeting }) => {
   useEffect(() => {
     setIsLoading(true);
     getProductsDB(category);
+    //Al seedProducts lo ejecutamos una sola vez y lo comentamos para que no repita los productos
     // seedProducts();
   }, [category]);
 

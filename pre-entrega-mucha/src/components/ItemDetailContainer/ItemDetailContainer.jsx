@@ -29,7 +29,7 @@ export const ItemDetailContainer = () => {
     setIsLoading(true);
     getProductDB(id);
   }, []);
-  
+
   return (
     <>
       {isLoading ? (

@@ -1,8 +1,20 @@
-# React + Vite
+# Proyecto final curso de ReactJs
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Ecomerce Tienda de instrumentos musicales
 
-Currently, two official plugins are available:
+------------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Este proyecto fue realizado durante el curso d ReactJs en Coder House 
+
+------------
+
+### Tecnologias utilizadas:
+- Vite
+- ReactJs
+- React Router Dom
+- Sweet Alert2
+- Bootstrap 5
+- Firebase
+
+### Datos de contacto
+cristian.mdp@live.com.ar
