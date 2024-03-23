@@ -1,4 +1,6 @@
+
 .navegacion {
+  background-color: rgb(235, 232, 227);
   display: flex;
   justify-content: space-around;
   align-items: center;
